@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="17a3235437864953bd513cc21062bc0d" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="Arabology_ERPModel.Account" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Area" Width="1.5" PointX="1.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Branch" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Brand" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Category" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.City" Width="1.5" PointX="1.5" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Class" Width="1.5" PointX="1.5" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Country" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Customer" Width="1.5" PointX="0.75" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.DeliveryMan" Width="1.5" PointX="0.75" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Item" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.ItemSubType" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.ItemType" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.PriceList" Width="1.5" PointX="1.5" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Region" Width="1.5" PointX="1.5" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Sale" Width="1.5" PointX="3" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.SalesLine" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.SalesmanType" Width="1.5" PointX="1.5" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Salesman" Width="1.5" PointX="0.75" PointY="60.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Sector" Width="1.5" PointX="1.5" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Store" Width="1.5" PointX="1.5" PointY="70.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.Term" Width="1.5" PointX="1.5" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.UnitOfMeasure" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Arabology_ERPModel.CalcUnitOfMeasure" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Areas" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Salesmen_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_Brands" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Salesmen_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Classes" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_PriceLists" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Customers_Terms" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Customers1" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_DeliveryMen" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_CalcUnitOfMeasure_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_ItemSubTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_ItemTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_UnitOfMeasure" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_UnitOfMeasure1" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_UnitOfMeasure2" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_UnitOfMeasure3" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_UnitOfMeasure4" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Items_UnitOfMeasure5" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_SalesLines_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_PriceLists" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Salesmen" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Sectors" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Sectors1" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Sales_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_SalesLines_Sales" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_SalesLines_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_SalesLines_Stores1" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_SalesLines_UnitOfMeasure" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Salesmen_SalesmanTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Salesmen_Sectors" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_Salesmen_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_CalcUnitOfMeasure_UnitOfMeasure" ManuallyRouted="false" />
+        <AssociationConnector Association="Arabology_ERPModel.FK_CalcUnitOfMeasure_UnitOfMeasure1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

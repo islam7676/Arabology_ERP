@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7095A1C-E0C2-4029-A728-3FC98EE4DAF8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Arabology_ERP</RootNamespace>
+    <AssemblyName>Arabology_ERP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MyLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MyLibrary\MyLibrary\bin\Release\MyLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\Account.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ArabologyDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArabologyDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ArabologyDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ArabologyDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArabologyDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Area.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Branch.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Brand.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CalcUnitOfMeasure.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Category.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\City.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Class.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Country.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Customer.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DeliveryMan.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Item.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ItemSubType.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ItemType.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PriceList.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Region.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Sale.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SalesLine.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Salesman.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SalesmanType.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Sector.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Store.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sysdiagram.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Term.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UnitOfMeasure.cs">
+      <DependentUpon>ArabologyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\F_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\F_Main.Designer.cs">
+      <DependentUpon>F_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Inventory\F_Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Inventory\F_Items.Designer.cs">
+      <DependentUpon>F_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Inventory\F_Stores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Inventory\F_Stores.Designer.cs">
+      <DependentUpon>F_Stores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\F_Main.resx">
+      <DependentUpon>F_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Inventory\F_Items.resx">
+      <DependentUpon>F_Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Inventory\F_Stores.resx">
+      <DependentUpon>F_Stores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="DAL\ArabologyDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ArabologyDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\ArabologyDB.edmx.diagram">
+      <DependentUpon>ArabologyDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Arabology_ERP.DAL.UnitOfMeasure.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\ArabologyDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ArabologyDB.Context.cs</LastGenOutput>
+      <DependentUpon>ArabologyDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="DAL\ArabologyDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArabologyDB.edmx</DependentUpon>
+      <LastGenOutput>ArabologyDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BL\" />
+    <Folder Include="PL\Accounting\" />
+    <Folder Include="PL\Purchases\" />
+    <Folder Include="PL\Sales\" />
+    <Folder Include="Resources\" />
+    <Folder Include="RL\Accounting\" />
+    <Folder Include="RL\Inventory\" />
+    <Folder Include="RL\Purchases\" />
+    <Folder Include="RL\Sales\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

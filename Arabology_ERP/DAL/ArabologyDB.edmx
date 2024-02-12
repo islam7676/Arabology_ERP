@@ -1,0 +1,2426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Arabology_ERPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountNameA" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountNameE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="NatureAccount" Type="smallint" />
+          <Property Name="FinalAccount" Type="smallint" />
+          <Property Name="FinalState" Type="smallint" />
+          <Property Name="ParentId" Type="int" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="AreaNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Branches">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BranchNameA" Type="nvarchar" MaxLength="50" />
+          <Property Name="BranchNameE" Type="nvarchar" MaxLength="50" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="BrandNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Arabology_ERP.dbo.CalcUnitOfMeasure' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CalcUnitOfMeasure">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="MainUOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="ConvertTo" Type="nvarchar" MaxLength="15" />
+          <Property Name="Factory" Type="int" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="CategoryNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="CityNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClassNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="ClassNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="CountryNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerNameA" Type="nvarchar" MaxLength="150" />
+          <Property Name="CustomerNameE" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="15" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="AreaId" Type="int" />
+          <Property Name="CreditsLimit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditState" Type="bit" />
+          <Property Name="LiceneseId" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClassId" Type="int" />
+          <Property Name="TremId" Type="int" />
+          <Property Name="InActive" Type="bit" />
+          <Property Name="BadPayer" Type="bit" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="BranchId" Type="int" />
+          <Property Name="PriceListId" Type="int" />
+        </EntityType>
+        <EntityType Name="DeliveryMen">
+          <Key>
+            <PropertyRef Name="DeliveryManId" />
+          </Key>
+          <Property Name="DeliveryManId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeliveryManNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryManNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="BranchId" Type="int" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ItemTypeId" Type="int" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="ItemSubTypeId" Type="int" />
+          <Property Name="InActive" Type="bit" />
+          <Property Name="MainUOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="LargeUOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="SmallUOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="SalesUOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="PurchaseUOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="InventoryUOM" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="ItemSubTypes">
+          <Key>
+            <PropertyRef Name="ItemSubTypeId" />
+          </Key>
+          <Property Name="ItemSubTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemSubTypeNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemSubTypeNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ItemTypes">
+          <Key>
+            <PropertyRef Name="ItemTypeId" />
+          </Key>
+          <Property Name="ItemTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemTypeNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemTypeNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="PriceLists">
+          <Key>
+            <PropertyRef Name="PriceListId" />
+          </Key>
+          <Property Name="PriceListId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PriceListNameA" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriceListNameE" Type="nvarchar" MaxLength="50" />
+          <Property Name="InActive" Type="bit" />
+          <Property Name="IsCost" Type="bit" />
+          <Property Name="PriceDate" Type="date" />
+          <Property Name="PriceEnd" Type="date" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Arabology_ERP.dbo.Prices' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Prices">
+          <Property Name="PriceListId" Type="int" />
+          <Property Name="ItemId" Type="int" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="15" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>-->
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegionNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegionNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="SalesId" />
+          </Key>
+          <Property Name="SalesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectorId" Type="int" />
+          <Property Name="SalesManId" Type="int" />
+          <Property Name="DliverymanId" Type="int" />
+          <Property Name="BranchId" Type="int" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="PriceListId" Type="int" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Taxes" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="NetTotal" Type="decimal" Precision="20" Scale="2" StoreGeneratedPattern="Computed" />
+          <Property Name="State" Type="bit" />
+          <Property Name="Note" Type="nvarchar" MaxLength="150" />
+          <Property Name="CusPO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentType" Type="int" />
+          <Property Name="CreatedUserId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUserId" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ActivedUser" Type="int" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="Promotion" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="SalesLines">
+          <Key>
+            <PropertyRef Name="SalesLineId" />
+          </Key>
+          <Property Name="SalesLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalesId" Type="int" Nullable="false" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Promotion" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LineTotal" Type="decimal" Precision="32" Scale="2" StoreGeneratedPattern="Computed" />
+          <Property Name="CostLine" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="StoreIdFrom" Type="int" Nullable="false" />
+          <Property Name="StoreIdTo" Type="int" />
+        </EntityType>
+        <EntityType Name="SalesmanTypes">
+          <Key>
+            <PropertyRef Name="SalesmanTypeId" />
+          </Key>
+          <Property Name="SalesmanTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalesmanTypeNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalesmanTypeNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Salesmen">
+          <Key>
+            <PropertyRef Name="SalesmanId" />
+          </Key>
+          <Property Name="SalesmanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalesmanNameA" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesmanNameE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="BranchId" Type="int" />
+          <Property Name="SalesmanTypeId" Type="int" />
+          <Property Name="SectorId" Type="int" />
+          <Property Name="StoreId" Type="int" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Sectors">
+          <Key>
+            <PropertyRef Name="SectorId" />
+          </Key>
+          <Property Name="SectorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SectorNameA" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectorNameE" Type="nvarchar" MaxLength="50" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="StoreNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Terms">
+          <Key>
+            <PropertyRef Name="TermId" />
+          </Key>
+          <Property Name="TermId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TermNameA" Type="nvarchar" MaxLength="100" />
+          <Property Name="TermNameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="UnitOfMeasure">
+          <Key>
+            <PropertyRef Name="UOM" />
+          </Key>
+          <Property Name="UOM" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="UOMNameA" Type="nvarchar" MaxLength="50" />
+          <Property Name="UOMNameE" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CalcUnitOfMeasure_Items">
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="CalcUnitOfMeasure" Type="Self.CalcUnitOfMeasure" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="CalcUnitOfMeasure">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalcUnitOfMeasure_UnitOfMeasure">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="CalcUnitOfMeasure" Type="Self.CalcUnitOfMeasure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="CalcUnitOfMeasure">
+              <PropertyRef Name="MainUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalcUnitOfMeasure_UnitOfMeasure1">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="CalcUnitOfMeasure" Type="Self.CalcUnitOfMeasure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="CalcUnitOfMeasure">
+              <PropertyRef Name="ConvertTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Areas">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Branches">
+          <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Cities">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Classes">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_PriceLists">
+          <End Role="PriceLists" Type="Self.PriceLists" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceLists">
+              <PropertyRef Name="PriceListId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="PriceListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Regions">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="RegionId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Terms">
+          <End Role="Terms" Type="Self.Terms" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terms">
+              <PropertyRef Name="TermId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="TremId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Brands">
+          <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brands">
+              <PropertyRef Name="BrandId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_ItemSubTypes">
+          <End Role="ItemSubTypes" Type="Self.ItemSubTypes" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemSubTypes">
+              <PropertyRef Name="ItemSubTypeId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="ItemSubTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_ItemTypes">
+          <End Role="ItemTypes" Type="Self.ItemTypes" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemTypes">
+              <PropertyRef Name="ItemTypeId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="ItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="MainUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure1">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="LargeUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure2">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="SmallUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure3">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="SalesUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure4">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="PurchaseUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure5">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="InventoryUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'Arabology_ERP.dbo.Prices' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Prices_Items" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'Arabology_ERP.dbo.Prices' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Prices_PriceLists" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'Arabology_ERP.dbo.Prices' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Prices_UnitOfMeasure" />-->
+        <Association Name="FK_Sales_Branches">
+          <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Customers1">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_DeliveryMen">
+          <End Role="DeliveryMen" Type="Self.DeliveryMen" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryMen">
+              <PropertyRef Name="DeliveryManId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="DliverymanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_PriceLists">
+          <End Role="PriceLists" Type="Self.PriceLists" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceLists">
+              <PropertyRef Name="PriceListId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="PriceListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Salesmen">
+          <End Role="Salesmen" Type="Self.Salesmen" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salesmen">
+              <PropertyRef Name="SalesmanId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="SalesManId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Sectors">
+          <End Role="Sectors" Type="Self.Sectors" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sectors">
+              <PropertyRef Name="SectorId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Sectors1">
+          <End Role="Sectors" Type="Self.Sectors" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sectors">
+              <PropertyRef Name="SectorId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Stores">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Items">
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Sales">
+          <End Role="Sales" Type="Self.Sales" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sales">
+              <PropertyRef Name="SalesId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="SalesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Stores">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="StoreIdFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Stores1">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+          <End Role="SalesLines" Type="Self.SalesLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="StoreIdTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_UnitOfMeasure">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="UOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Branches">
+          <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesmen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesmen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_SalesmanTypes">
+          <End Role="SalesmanTypes" Type="Self.SalesmanTypes" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesmen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesmanTypes">
+              <PropertyRef Name="SalesmanTypeId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="SalesmanTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Sectors">
+          <End Role="Sectors" Type="Self.Sectors" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesmen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sectors">
+              <PropertyRef Name="SectorId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Stores">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesmen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Arabology_ERPModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Branches" EntityType="Self.Branches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryMen" EntityType="Self.DeliveryMen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemSubTypes" EntityType="Self.ItemSubTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemTypes" EntityType="Self.ItemTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PriceLists" EntityType="Self.PriceLists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesLines" EntityType="Self.SalesLines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesmanTypes" EntityType="Self.SalesmanTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salesmen" EntityType="Self.Salesmen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sectors" EntityType="Self.Sectors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Terms" EntityType="Self.Terms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UnitOfMeasure" EntityType="Self.UnitOfMeasure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CalcUnitOfMeasure" EntityType="Self.CalcUnitOfMeasure" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CalcUnitOfMeasure].[ItemId] AS [ItemId], 
+    [CalcUnitOfMeasure].[MainUOM] AS [MainUOM], 
+    [CalcUnitOfMeasure].[ConvertTo] AS [ConvertTo], 
+    [CalcUnitOfMeasure].[Factory] AS [Factory]
+    FROM [dbo].[CalcUnitOfMeasure] AS [CalcUnitOfMeasure]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CalcUnitOfMeasure_Items" Association="Self.FK_CalcUnitOfMeasure_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="CalcUnitOfMeasure" EntitySet="CalcUnitOfMeasure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalcUnitOfMeasure_UnitOfMeasure" Association="Self.FK_CalcUnitOfMeasure_UnitOfMeasure">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="CalcUnitOfMeasure" EntitySet="CalcUnitOfMeasure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalcUnitOfMeasure_UnitOfMeasure1" Association="Self.FK_CalcUnitOfMeasure_UnitOfMeasure1">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="CalcUnitOfMeasure" EntitySet="CalcUnitOfMeasure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Areas" Association="Self.FK_Customers_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Branches" Association="Self.FK_Customers_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Categories" Association="Self.FK_Customers_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Cities" Association="Self.FK_Customers_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Classes" Association="Self.FK_Customers_Classes">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_PriceLists" Association="Self.FK_Customers_PriceLists">
+            <End Role="PriceLists" EntitySet="PriceLists" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Regions" Association="Self.FK_Customers_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Terms" Association="Self.FK_Customers_Terms">
+            <End Role="Terms" EntitySet="Terms" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Brands" Association="Self.FK_Items_Brands">
+            <End Role="Brands" EntitySet="Brands" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Categories" Association="Self.FK_Items_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Countries" Association="Self.FK_Items_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_ItemSubTypes" Association="Self.FK_Items_ItemSubTypes">
+            <End Role="ItemSubTypes" EntitySet="ItemSubTypes" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_ItemTypes" Association="Self.FK_Items_ItemTypes">
+            <End Role="ItemTypes" EntitySet="ItemTypes" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure" Association="Self.FK_Items_UnitOfMeasure">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure1" Association="Self.FK_Items_UnitOfMeasure1">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure2" Association="Self.FK_Items_UnitOfMeasure2">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure3" Association="Self.FK_Items_UnitOfMeasure3">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure4" Association="Self.FK_Items_UnitOfMeasure4">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure5" Association="Self.FK_Items_UnitOfMeasure5">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Branches" Association="Self.FK_Sales_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Customers" Association="Self.FK_Sales_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Customers1" Association="Self.FK_Sales_Customers1">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_DeliveryMen" Association="Self.FK_Sales_DeliveryMen">
+            <End Role="DeliveryMen" EntitySet="DeliveryMen" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_PriceLists" Association="Self.FK_Sales_PriceLists">
+            <End Role="PriceLists" EntitySet="PriceLists" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Salesmen" Association="Self.FK_Sales_Salesmen">
+            <End Role="Salesmen" EntitySet="Salesmen" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Sectors" Association="Self.FK_Sales_Sectors">
+            <End Role="Sectors" EntitySet="Sectors" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Sectors1" Association="Self.FK_Sales_Sectors1">
+            <End Role="Sectors" EntitySet="Sectors" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Stores" Association="Self.FK_Sales_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Items" Association="Self.FK_SalesLines_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Sales" Association="Self.FK_SalesLines_Sales">
+            <End Role="Sales" EntitySet="Sales" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Stores" Association="Self.FK_SalesLines_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Stores1" Association="Self.FK_SalesLines_Stores1">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_UnitOfMeasure" Association="Self.FK_SalesLines_UnitOfMeasure">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasure" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Branches" Association="Self.FK_Salesmen_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Categories" Association="Self.FK_Salesmen_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_SalesmanTypes" Association="Self.FK_Salesmen_SalesmanTypes">
+            <End Role="SalesmanTypes" EntitySet="SalesmanTypes" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Sectors" Association="Self.FK_Salesmen_Sectors">
+            <End Role="Sectors" EntitySet="Sectors" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Stores" Association="Self.FK_Salesmen_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Arabology_ERPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountNameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NatureAccount" Type="Int16" />
+          <Property Name="FinalAccount" Type="Int16" />
+          <Property Name="FinalState" Type="Int16" />
+          <Property Name="ParentId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AreaNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Areas" FromRole="Areas" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BranchNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BranchNameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Branches" FromRole="Branches" ToRole="Customers" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Branches" FromRole="Branches" ToRole="Sales" />
+          <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesmen_Branches" FromRole="Branches" ToRole="Salesmen" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BrandNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_Brands" FromRole="Brands" ToRole="Items" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Categories" FromRole="Categories" ToRole="Customers" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_Categories" FromRole="Categories" ToRole="Items" />
+          <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesmen_Categories" FromRole="Categories" ToRole="Salesmen" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CityNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Cities" FromRole="Cities" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ClassNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Classes" FromRole="Classes" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_Countries" FromRole="Countries" ToRole="Items" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerNameA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNameE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="RegionId" Type="Int32" />
+          <Property Name="AreaId" Type="Int32" />
+          <Property Name="CreditsLimit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditState" Type="Boolean" />
+          <Property Name="LiceneseId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClassId" Type="Int32" />
+          <Property Name="TremId" Type="Int32" />
+          <Property Name="InActive" Type="Boolean" />
+          <Property Name="BadPayer" Type="Boolean" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="BranchId" Type="Int32" />
+          <Property Name="PriceListId" Type="Int32" />
+          <NavigationProperty Name="Area" Relationship="Self.FK_Customers_Areas" FromRole="Customers" ToRole="Areas" />
+          <NavigationProperty Name="Branch" Relationship="Self.FK_Customers_Branches" FromRole="Customers" ToRole="Branches" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Customers_Categories" FromRole="Customers" ToRole="Categories" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Customers_Cities" FromRole="Customers" ToRole="Cities" />
+          <NavigationProperty Name="Class" Relationship="Self.FK_Customers_Classes" FromRole="Customers" ToRole="Classes" />
+          <NavigationProperty Name="PriceList" Relationship="Self.FK_Customers_PriceLists" FromRole="Customers" ToRole="PriceLists" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_Customers_Regions" FromRole="Customers" ToRole="Regions" />
+          <NavigationProperty Name="Term" Relationship="Self.FK_Customers_Terms" FromRole="Customers" ToRole="Terms" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Customers" FromRole="Customers" ToRole="Sales" />
+          <NavigationProperty Name="Sales1" Relationship="Self.FK_Sales_Customers1" FromRole="Customers" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="DeliveryMan">
+          <Key>
+            <PropertyRef Name="DeliveryManId" />
+          </Key>
+          <Property Name="DeliveryManId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeliveryManNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryManNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="BranchId" Type="Int32" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_DeliveryMen" FromRole="DeliveryMen" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="ItemTypeId" Type="Int32" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="ItemSubTypeId" Type="Int32" />
+          <Property Name="InActive" Type="Boolean" />
+          <Property Name="MainUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="LargeUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SmallUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SalesUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK_Items_Brands" FromRole="Items" ToRole="Brands" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Items_Categories" FromRole="Items" ToRole="Categories" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Items_Countries" FromRole="Items" ToRole="Countries" />
+          <NavigationProperty Name="CalcUnitOfMeasure" Relationship="Self.FK_CalcUnitOfMeasure_Items" FromRole="Items" ToRole="CalcUnitOfMeasure" />
+          <NavigationProperty Name="ItemSubType" Relationship="Self.FK_Items_ItemSubTypes" FromRole="Items" ToRole="ItemSubTypes" />
+          <NavigationProperty Name="ItemType" Relationship="Self.FK_Items_ItemTypes" FromRole="Items" ToRole="ItemTypes" />
+          <NavigationProperty Name="UnitOfMeasure" Relationship="Self.FK_Items_UnitOfMeasure" FromRole="Items" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="UnitOfMeasure1" Relationship="Self.FK_Items_UnitOfMeasure1" FromRole="Items" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="UnitOfMeasure2" Relationship="Self.FK_Items_UnitOfMeasure2" FromRole="Items" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="UnitOfMeasure3" Relationship="Self.FK_Items_UnitOfMeasure3" FromRole="Items" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="UnitOfMeasure4" Relationship="Self.FK_Items_UnitOfMeasure4" FromRole="Items" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="UnitOfMeasure5" Relationship="Self.FK_Items_UnitOfMeasure5" FromRole="Items" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="SalesLines" Relationship="Self.FK_SalesLines_Items" FromRole="Items" ToRole="SalesLines" />
+        </EntityType>
+        <EntityType Name="ItemSubType">
+          <Key>
+            <PropertyRef Name="ItemSubTypeId" />
+          </Key>
+          <Property Name="ItemSubTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemSubTypeNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemSubTypeNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_ItemSubTypes" FromRole="ItemSubTypes" ToRole="Items" />
+        </EntityType>
+        <EntityType Name="ItemType">
+          <Key>
+            <PropertyRef Name="ItemTypeId" />
+          </Key>
+          <Property Name="ItemTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemTypeNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemTypeNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_ItemTypes" FromRole="ItemTypes" ToRole="Items" />
+        </EntityType>
+        <EntityType Name="PriceList">
+          <Key>
+            <PropertyRef Name="PriceListId" />
+          </Key>
+          <Property Name="PriceListId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PriceListNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriceListNameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <Property Name="IsCost" Type="Boolean" />
+          <Property Name="PriceDate" Type="DateTime" Precision="0" />
+          <Property Name="PriceEnd" Type="DateTime" Precision="0" />
+          <Property Name="Currency" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_PriceLists" FromRole="PriceLists" ToRole="Customers" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_PriceLists" FromRole="PriceLists" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RegionNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Regions" FromRole="Regions" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SalesId" />
+          </Key>
+          <Property Name="SalesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectorId" Type="Int32" />
+          <Property Name="SalesManId" Type="Int32" />
+          <Property Name="DliverymanId" Type="Int32" />
+          <Property Name="BranchId" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="PriceListId" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Taxes" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="NetTotal" Type="Decimal" Precision="20" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="Note" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CusPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentType" Type="Int32" />
+          <Property Name="CreatedUserId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedUserId" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ActivedUser" Type="Int32" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="Promotion" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Branch" Relationship="Self.FK_Sales_Branches" FromRole="Sales" ToRole="Branches" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Sales_Customers" FromRole="Sales" ToRole="Customers" />
+          <NavigationProperty Name="Customer1" Relationship="Self.FK_Sales_Customers1" FromRole="Sales" ToRole="Customers" />
+          <NavigationProperty Name="DeliveryMan" Relationship="Self.FK_Sales_DeliveryMen" FromRole="Sales" ToRole="DeliveryMen" />
+          <NavigationProperty Name="PriceList" Relationship="Self.FK_Sales_PriceLists" FromRole="Sales" ToRole="PriceLists" />
+          <NavigationProperty Name="Salesman" Relationship="Self.FK_Sales_Salesmen" FromRole="Sales" ToRole="Salesmen" />
+          <NavigationProperty Name="Sector" Relationship="Self.FK_Sales_Sectors" FromRole="Sales" ToRole="Sectors" />
+          <NavigationProperty Name="Sector1" Relationship="Self.FK_Sales_Sectors1" FromRole="Sales" ToRole="Sectors" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Sales_Stores" FromRole="Sales" ToRole="Stores" />
+          <NavigationProperty Name="SalesLines" Relationship="Self.FK_SalesLines_Sales" FromRole="Sales" ToRole="SalesLines" />
+        </EntityType>
+        <EntityType Name="SalesLine">
+          <Key>
+            <PropertyRef Name="SalesLineId" />
+          </Key>
+          <Property Name="SalesLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalesId" Type="Int32" Nullable="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Promotion" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LineTotal" Type="Decimal" Precision="32" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CostLine" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreIdFrom" Type="Int32" Nullable="false" />
+          <Property Name="StoreIdTo" Type="Int32" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_SalesLines_Items" FromRole="SalesLines" ToRole="Items" />
+          <NavigationProperty Name="Sale" Relationship="Self.FK_SalesLines_Sales" FromRole="SalesLines" ToRole="Sales" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_SalesLines_Stores" FromRole="SalesLines" ToRole="Stores" />
+          <NavigationProperty Name="Store1" Relationship="Self.FK_SalesLines_Stores1" FromRole="SalesLines" ToRole="Stores" />
+          <NavigationProperty Name="UnitOfMeasure" Relationship="Self.FK_SalesLines_UnitOfMeasure" FromRole="SalesLines" ToRole="UnitOfMeasure" />
+        </EntityType>
+        <EntityType Name="SalesmanType">
+          <Key>
+            <PropertyRef Name="SalesmanTypeId" />
+          </Key>
+          <Property Name="SalesmanTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalesmanTypeNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SalesmanTypeNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesmen_SalesmanTypes" FromRole="SalesmanTypes" ToRole="Salesmen" />
+        </EntityType>
+        <EntityType Name="Salesman">
+          <Key>
+            <PropertyRef Name="SalesmanId" />
+          </Key>
+          <Property Name="SalesmanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalesmanNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesmanNameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="BranchId" Type="Int32" />
+          <Property Name="SalesmanTypeId" Type="Int32" />
+          <Property Name="SectorId" Type="Int32" />
+          <Property Name="StoreId" Type="Int32" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Branch" Relationship="Self.FK_Salesmen_Branches" FromRole="Salesmen" ToRole="Branches" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Salesmen_Categories" FromRole="Salesmen" ToRole="Categories" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Salesmen" FromRole="Salesmen" ToRole="Sales" />
+          <NavigationProperty Name="SalesmanType" Relationship="Self.FK_Salesmen_SalesmanTypes" FromRole="Salesmen" ToRole="SalesmanTypes" />
+          <NavigationProperty Name="Sector" Relationship="Self.FK_Salesmen_Sectors" FromRole="Salesmen" ToRole="Sectors" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Salesmen_Stores" FromRole="Salesmen" ToRole="Stores" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="SectorId" />
+          </Key>
+          <Property Name="SectorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SectorNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectorNameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Sectors" FromRole="Sectors" ToRole="Sales" />
+          <NavigationProperty Name="Sales1" Relationship="Self.FK_Sales_Sectors1" FromRole="Sectors" ToRole="Sales" />
+          <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesmen_Sectors" FromRole="Sectors" ToRole="Salesmen" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="StoreNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Stores" FromRole="Stores" ToRole="Sales" />
+          <NavigationProperty Name="SalesLines" Relationship="Self.FK_SalesLines_Stores" FromRole="Stores" ToRole="SalesLines" />
+          <NavigationProperty Name="SalesLines1" Relationship="Self.FK_SalesLines_Stores1" FromRole="Stores" ToRole="SalesLines" />
+          <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesmen_Stores" FromRole="Stores" ToRole="Salesmen" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Term">
+          <Key>
+            <PropertyRef Name="TermId" />
+          </Key>
+          <Property Name="TermId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TermNameA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TermNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Terms" FromRole="Terms" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="UnitOfMeasure">
+          <Key>
+            <PropertyRef Name="UOM" />
+          </Key>
+          <Property Name="UOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UOMNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UOMNameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Items_UnitOfMeasure" FromRole="UnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="Items1" Relationship="Self.FK_Items_UnitOfMeasure1" FromRole="UnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="Items2" Relationship="Self.FK_Items_UnitOfMeasure2" FromRole="UnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="Items3" Relationship="Self.FK_Items_UnitOfMeasure3" FromRole="UnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="Items4" Relationship="Self.FK_Items_UnitOfMeasure4" FromRole="UnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="Items5" Relationship="Self.FK_Items_UnitOfMeasure5" FromRole="UnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="SalesLines" Relationship="Self.FK_SalesLines_UnitOfMeasure" FromRole="UnitOfMeasure" ToRole="SalesLines" />
+          <NavigationProperty Name="CalcUnitOfMeasures" Relationship="Self.FK_CalcUnitOfMeasure_UnitOfMeasure" FromRole="UnitOfMeasure" ToRole="CalcUnitOfMeasure" />
+          <NavigationProperty Name="CalcUnitOfMeasures1" Relationship="Self.FK_CalcUnitOfMeasure_UnitOfMeasure1" FromRole="UnitOfMeasure" ToRole="CalcUnitOfMeasure" />
+        </EntityType>
+        <EntityType Name="CalcUnitOfMeasure">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="MainUOM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ConvertTo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Factory" Type="Int32" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_CalcUnitOfMeasure_Items" FromRole="CalcUnitOfMeasure" ToRole="Items" />
+          <NavigationProperty Name="UnitOfMeasure" Relationship="Self.FK_CalcUnitOfMeasure_UnitOfMeasure" FromRole="CalcUnitOfMeasure" ToRole="UnitOfMeasure" />
+          <NavigationProperty Name="UnitOfMeasure1" Relationship="Self.FK_CalcUnitOfMeasure_UnitOfMeasure1" FromRole="CalcUnitOfMeasure" ToRole="UnitOfMeasure" />
+        </EntityType>
+        <Association Name="FK_Customers_Areas">
+          <End Role="Areas" Type="Self.Area" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Branches">
+          <End Role="Branches" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Branches">
+          <End Role="Branches" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Branches">
+          <End Role="Branches" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Brands">
+          <End Role="Brands" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brands">
+              <PropertyRef Name="BrandId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Categories">
+          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Categories">
+          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Categories">
+          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Cities">
+          <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Classes">
+          <End Role="Classes" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Countries">
+          <End Role="Countries" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_PriceLists">
+          <End Role="PriceLists" Type="Self.PriceList" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceLists">
+              <PropertyRef Name="PriceListId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="PriceListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Regions">
+          <End Role="Regions" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="RegionId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Terms">
+          <End Role="Terms" Type="Self.Term" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terms">
+              <PropertyRef Name="TermId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="TremId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Customers">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Customers1">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_DeliveryMen">
+          <End Role="DeliveryMen" Type="Self.DeliveryMan" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryMen">
+              <PropertyRef Name="DeliveryManId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="DliverymanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalcUnitOfMeasure_Items">
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="CalcUnitOfMeasure" Type="Self.CalcUnitOfMeasure" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="CalcUnitOfMeasure">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_ItemSubTypes">
+          <End Role="ItemSubTypes" Type="Self.ItemSubType" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemSubTypes">
+              <PropertyRef Name="ItemSubTypeId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="ItemSubTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_ItemTypes">
+          <End Role="ItemTypes" Type="Self.ItemType" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemTypes">
+              <PropertyRef Name="ItemTypeId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="ItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="MainUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure1">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="LargeUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure2">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="SmallUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure3">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="SalesUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure4">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="PurchaseUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_UnitOfMeasure5">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="InventoryUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Items">
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_PriceLists">
+          <End Role="PriceLists" Type="Self.PriceList" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceLists">
+              <PropertyRef Name="PriceListId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="PriceListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Salesmen">
+          <End Role="Salesmen" Type="Self.Salesman" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salesmen">
+              <PropertyRef Name="SalesmanId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="SalesManId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Sectors">
+          <End Role="Sectors" Type="Self.Sector" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sectors">
+              <PropertyRef Name="SectorId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Sectors1">
+          <End Role="Sectors" Type="Self.Sector" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sectors">
+              <PropertyRef Name="SectorId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Stores">
+          <End Role="Stores" Type="Self.Store" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Sales">
+          <End Role="Sales" Type="Self.Sale" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sales">
+              <PropertyRef Name="SalesId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="SalesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Stores">
+          <End Role="Stores" Type="Self.Store" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="StoreIdFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_Stores1">
+          <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="SalesLines" Type="Self.SalesLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="StoreIdTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesLines_UnitOfMeasure">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="1" />
+          <End Role="SalesLines" Type="Self.SalesLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="SalesLines">
+              <PropertyRef Name="UOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_SalesmanTypes">
+          <End Role="SalesmanTypes" Type="Self.SalesmanType" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesmanTypes">
+              <PropertyRef Name="SalesmanTypeId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="SalesmanTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Sectors">
+          <End Role="Sectors" Type="Self.Sector" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sectors">
+              <PropertyRef Name="SectorId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesmen_Stores">
+          <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Salesmen" Type="Self.Salesman" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="Salesmen">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalcUnitOfMeasure_UnitOfMeasure">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="CalcUnitOfMeasure" Type="Self.CalcUnitOfMeasure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="CalcUnitOfMeasure">
+              <PropertyRef Name="MainUOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalcUnitOfMeasure_UnitOfMeasure1">
+          <End Role="UnitOfMeasure" Type="Self.UnitOfMeasure" Multiplicity="0..1" />
+          <End Role="CalcUnitOfMeasure" Type="Self.CalcUnitOfMeasure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitOfMeasure">
+              <PropertyRef Name="UOM" />
+            </Principal>
+            <Dependent Role="CalcUnitOfMeasure">
+              <PropertyRef Name="ConvertTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Arabology_ERPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Areas" EntityType="Self.Area" />
+          <EntitySet Name="Branches" EntityType="Self.Branch" />
+          <EntitySet Name="Brands" EntityType="Self.Brand" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Classes" EntityType="Self.Class" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="DeliveryMen" EntityType="Self.DeliveryMan" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="ItemSubTypes" EntityType="Self.ItemSubType" />
+          <EntitySet Name="ItemTypes" EntityType="Self.ItemType" />
+          <EntitySet Name="PriceLists" EntityType="Self.PriceList" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Sales" EntityType="Self.Sale" />
+          <EntitySet Name="SalesLines" EntityType="Self.SalesLine" />
+          <EntitySet Name="SalesmanTypes" EntityType="Self.SalesmanType" />
+          <EntitySet Name="Salesmen" EntityType="Self.Salesman" />
+          <EntitySet Name="Sectors" EntityType="Self.Sector" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Terms" EntityType="Self.Term" />
+          <EntitySet Name="UnitOfMeasures" EntityType="Self.UnitOfMeasure" />
+          <EntitySet Name="CalcUnitOfMeasures" EntityType="Self.CalcUnitOfMeasure" />
+          <AssociationSet Name="FK_Customers_Areas" Association="Self.FK_Customers_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Branches" Association="Self.FK_Customers_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Branches" Association="Self.FK_Sales_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Branches" Association="Self.FK_Salesmen_Branches">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Brands" Association="Self.FK_Items_Brands">
+            <End Role="Brands" EntitySet="Brands" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Categories" Association="Self.FK_Customers_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Categories" Association="Self.FK_Items_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Categories" Association="Self.FK_Salesmen_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Cities" Association="Self.FK_Customers_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Classes" Association="Self.FK_Customers_Classes">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Countries" Association="Self.FK_Items_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_PriceLists" Association="Self.FK_Customers_PriceLists">
+            <End Role="PriceLists" EntitySet="PriceLists" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Regions" Association="Self.FK_Customers_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Terms" Association="Self.FK_Customers_Terms">
+            <End Role="Terms" EntitySet="Terms" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Customers" Association="Self.FK_Sales_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Customers1" Association="Self.FK_Sales_Customers1">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_DeliveryMen" Association="Self.FK_Sales_DeliveryMen">
+            <End Role="DeliveryMen" EntitySet="DeliveryMen" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalcUnitOfMeasure_Items" Association="Self.FK_CalcUnitOfMeasure_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="CalcUnitOfMeasure" EntitySet="CalcUnitOfMeasures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_ItemSubTypes" Association="Self.FK_Items_ItemSubTypes">
+            <End Role="ItemSubTypes" EntitySet="ItemSubTypes" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_ItemTypes" Association="Self.FK_Items_ItemTypes">
+            <End Role="ItemTypes" EntitySet="ItemTypes" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure" Association="Self.FK_Items_UnitOfMeasure">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure1" Association="Self.FK_Items_UnitOfMeasure1">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure2" Association="Self.FK_Items_UnitOfMeasure2">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure3" Association="Self.FK_Items_UnitOfMeasure3">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure4" Association="Self.FK_Items_UnitOfMeasure4">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_UnitOfMeasure5" Association="Self.FK_Items_UnitOfMeasure5">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Items" Association="Self.FK_SalesLines_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_PriceLists" Association="Self.FK_Sales_PriceLists">
+            <End Role="PriceLists" EntitySet="PriceLists" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Salesmen" Association="Self.FK_Sales_Salesmen">
+            <End Role="Salesmen" EntitySet="Salesmen" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Sectors" Association="Self.FK_Sales_Sectors">
+            <End Role="Sectors" EntitySet="Sectors" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Sectors1" Association="Self.FK_Sales_Sectors1">
+            <End Role="Sectors" EntitySet="Sectors" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Stores" Association="Self.FK_Sales_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Sales" Association="Self.FK_SalesLines_Sales">
+            <End Role="Sales" EntitySet="Sales" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Stores" Association="Self.FK_SalesLines_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_Stores1" Association="Self.FK_SalesLines_Stores1">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesLines_UnitOfMeasure" Association="Self.FK_SalesLines_UnitOfMeasure">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="SalesLines" EntitySet="SalesLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_SalesmanTypes" Association="Self.FK_Salesmen_SalesmanTypes">
+            <End Role="SalesmanTypes" EntitySet="SalesmanTypes" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Sectors" Association="Self.FK_Salesmen_Sectors">
+            <End Role="Sectors" EntitySet="Sectors" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesmen_Stores" Association="Self.FK_Salesmen_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Salesmen" EntitySet="Salesmen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalcUnitOfMeasure_UnitOfMeasure" Association="Self.FK_CalcUnitOfMeasure_UnitOfMeasure">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="CalcUnitOfMeasure" EntitySet="CalcUnitOfMeasures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalcUnitOfMeasure_UnitOfMeasure1" Association="Self.FK_CalcUnitOfMeasure_UnitOfMeasure1">
+            <End Role="UnitOfMeasure" EntitySet="UnitOfMeasures" />
+            <End Role="CalcUnitOfMeasure" EntitySet="CalcUnitOfMeasures" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Arabology_ERPModelStoreContainer" CdmEntityContainer="Arabology_ERPEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="AccountNameA" ColumnName="AccountNameA" />
+                <ScalarProperty Name="AccountNameE" ColumnName="AccountNameE" />
+                <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+                <ScalarProperty Name="NatureAccount" ColumnName="NatureAccount" />
+                <ScalarProperty Name="FinalAccount" ColumnName="FinalAccount" />
+                <ScalarProperty Name="FinalState" ColumnName="FinalState" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Area">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AreaNameA" ColumnName="AreaNameA" />
+                <ScalarProperty Name="AreaNameE" ColumnName="AreaNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Branch">
+              <MappingFragment StoreEntitySet="Branches">
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="BranchNameA" ColumnName="BranchNameA" />
+                <ScalarProperty Name="BranchNameE" ColumnName="BranchNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Brand">
+              <MappingFragment StoreEntitySet="Brands">
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="BrandNameA" ColumnName="BrandNameA" />
+                <ScalarProperty Name="BrandNameE" ColumnName="BrandNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryNameA" ColumnName="CategoryNameA" />
+                <ScalarProperty Name="CategoryNameE" ColumnName="CategoryNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityNameA" ColumnName="CityNameA" />
+                <ScalarProperty Name="CityNameE" ColumnName="CityNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Class">
+              <MappingFragment StoreEntitySet="Classes">
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="ClassNameA" ColumnName="ClassNameA" />
+                <ScalarProperty Name="ClassNameE" ColumnName="ClassNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryNameA" ColumnName="CountryNameA" />
+                <ScalarProperty Name="CountryNameE" ColumnName="CountryNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerNameA" ColumnName="CustomerNameA" />
+                <ScalarProperty Name="CustomerNameE" ColumnName="CustomerNameE" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="CreditsLimit" ColumnName="CreditsLimit" />
+                <ScalarProperty Name="CreditState" ColumnName="CreditState" />
+                <ScalarProperty Name="LiceneseId" ColumnName="LiceneseId" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="TremId" ColumnName="TremId" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="BadPayer" ColumnName="BadPayer" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryMen">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.DeliveryMan">
+              <MappingFragment StoreEntitySet="DeliveryMen">
+                <ScalarProperty Name="DeliveryManId" ColumnName="DeliveryManId" />
+                <ScalarProperty Name="DeliveryManNameA" ColumnName="DeliveryManNameA" />
+                <ScalarProperty Name="DeliveryManNameE" ColumnName="DeliveryManNameE" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="ItemNameA" ColumnName="ItemNameA" />
+                <ScalarProperty Name="ItemNameE" ColumnName="ItemNameE" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="ItemSubTypeId" ColumnName="ItemSubTypeId" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="MainUOM" ColumnName="MainUOM" />
+                <ScalarProperty Name="LargeUOM" ColumnName="LargeUOM" />
+                <ScalarProperty Name="SmallUOM" ColumnName="SmallUOM" />
+                <ScalarProperty Name="SalesUOM" ColumnName="SalesUOM" />
+                <ScalarProperty Name="PurchaseUOM" ColumnName="PurchaseUOM" />
+                <ScalarProperty Name="InventoryUOM" ColumnName="InventoryUOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemSubTypes">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.ItemSubType">
+              <MappingFragment StoreEntitySet="ItemSubTypes">
+                <ScalarProperty Name="ItemSubTypeId" ColumnName="ItemSubTypeId" />
+                <ScalarProperty Name="ItemSubTypeNameA" ColumnName="ItemSubTypeNameA" />
+                <ScalarProperty Name="ItemSubTypeNameE" ColumnName="ItemSubTypeNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemTypes">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.ItemType">
+              <MappingFragment StoreEntitySet="ItemTypes">
+                <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+                <ScalarProperty Name="ItemTypeNameA" ColumnName="ItemTypeNameA" />
+                <ScalarProperty Name="ItemTypeNameE" ColumnName="ItemTypeNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceLists">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.PriceList">
+              <MappingFragment StoreEntitySet="PriceLists">
+                <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+                <ScalarProperty Name="PriceListNameA" ColumnName="PriceListNameA" />
+                <ScalarProperty Name="PriceListNameE" ColumnName="PriceListNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="IsCost" ColumnName="IsCost" />
+                <ScalarProperty Name="PriceDate" ColumnName="PriceDate" />
+                <ScalarProperty Name="PriceEnd" ColumnName="PriceEnd" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Region">
+              <MappingFragment StoreEntitySet="Regions">
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="RegionNameA" ColumnName="RegionNameA" />
+                <ScalarProperty Name="RegionNameE" ColumnName="RegionNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Sale">
+              <MappingFragment StoreEntitySet="Sales">
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="SectorId" ColumnName="SectorId" />
+                <ScalarProperty Name="SalesManId" ColumnName="SalesManId" />
+                <ScalarProperty Name="DliverymanId" ColumnName="DliverymanId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Taxes" ColumnName="Taxes" />
+                <ScalarProperty Name="NetTotal" ColumnName="NetTotal" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CusPO" ColumnName="CusPO" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="CreatedUserId" ColumnName="CreatedUserId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedUserId" ColumnName="ModifiedUserId" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ActivedUser" ColumnName="ActivedUser" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="Promotion" ColumnName="Promotion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesLines">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.SalesLine">
+              <MappingFragment StoreEntitySet="SalesLines">
+                <ScalarProperty Name="SalesLineId" ColumnName="SalesLineId" />
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Promotion" ColumnName="Promotion" />
+                <ScalarProperty Name="LineTotal" ColumnName="LineTotal" />
+                <ScalarProperty Name="CostLine" ColumnName="CostLine" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="StoreIdFrom" ColumnName="StoreIdFrom" />
+                <ScalarProperty Name="StoreIdTo" ColumnName="StoreIdTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesmanTypes">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.SalesmanType">
+              <MappingFragment StoreEntitySet="SalesmanTypes">
+                <ScalarProperty Name="SalesmanTypeId" ColumnName="SalesmanTypeId" />
+                <ScalarProperty Name="SalesmanTypeNameA" ColumnName="SalesmanTypeNameA" />
+                <ScalarProperty Name="SalesmanTypeNameE" ColumnName="SalesmanTypeNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salesmen">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Salesman">
+              <MappingFragment StoreEntitySet="Salesmen">
+                <ScalarProperty Name="SalesmanId" ColumnName="SalesmanId" />
+                <ScalarProperty Name="SalesmanNameA" ColumnName="SalesmanNameA" />
+                <ScalarProperty Name="SalesmanNameE" ColumnName="SalesmanNameE" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="SalesmanTypeId" ColumnName="SalesmanTypeId" />
+                <ScalarProperty Name="SectorId" ColumnName="SectorId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sectors">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Sector">
+              <MappingFragment StoreEntitySet="Sectors">
+                <ScalarProperty Name="SectorId" ColumnName="SectorId" />
+                <ScalarProperty Name="SectorNameA" ColumnName="SectorNameA" />
+                <ScalarProperty Name="SectorNameE" ColumnName="SectorNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="StoreNameA" ColumnName="StoreNameA" />
+                <ScalarProperty Name="StoreNameE" ColumnName="StoreNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terms">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.Term">
+              <MappingFragment StoreEntitySet="Terms">
+                <ScalarProperty Name="TermId" ColumnName="TermId" />
+                <ScalarProperty Name="TermNameA" ColumnName="TermNameA" />
+                <ScalarProperty Name="TermNameE" ColumnName="TermNameE" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitOfMeasures">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.UnitOfMeasure">
+              <MappingFragment StoreEntitySet="UnitOfMeasure">
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="UOMNameA" ColumnName="UOMNameA" />
+                <ScalarProperty Name="UOMNameE" ColumnName="UOMNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CalcUnitOfMeasures">
+            <EntityTypeMapping TypeName="Arabology_ERPModel.CalcUnitOfMeasure">
+              <MappingFragment StoreEntitySet="CalcUnitOfMeasure">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="MainUOM" ColumnName="MainUOM" />
+                <ScalarProperty Name="ConvertTo" ColumnName="ConvertTo" />
+                <ScalarProperty Name="Factory" ColumnName="Factory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
