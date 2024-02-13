@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arabology_ERP", "Arabology_ERP\Arabology_ERP.csproj", "{C7095A1C-E0C2-4029-A728-3FC98EE4DAF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "..\MyLibrary\MyLibrary\MyLibrary.csproj", "{84FA2B1F-0CCD-4EFB-B83B-97FE72E6DB9C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{C7095A1C-E0C2-4029-A728-3FC98EE4DAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7095A1C-E0C2-4029-A728-3FC98EE4DAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7095A1C-E0C2-4029-A728-3FC98EE4DAF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84FA2B1F-0CCD-4EFB-B83B-97FE72E6DB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84FA2B1F-0CCD-4EFB-B83B-97FE72E6DB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84FA2B1F-0CCD-4EFB-B83B-97FE72E6DB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84FA2B1F-0CCD-4EFB-B83B-97FE72E6DB9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
