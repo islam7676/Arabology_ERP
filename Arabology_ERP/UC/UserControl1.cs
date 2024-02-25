@@ -7,18 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Arabology_ERP.PL;
 
-namespace Arabology_ERP.PL
+namespace Arabology_ERP.UC
 {
-    public partial class F_Main : Form
+    public partial class UserControl1 : UserControl
     {
-        public F_Main()
+        public UserControl1()
         {
             InitializeComponent();
-            Inventory.F_Items frm = new Inventory.F_Items();
-            frm.MdiParent = this;
-            frm.Show();
         }
     }
 }

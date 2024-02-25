@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MyLibrary">
+      <HintPath>D:\DataB\MyLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -171,6 +174,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\BrNameE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\BrNameE.designer.cs">
+      <DependentUpon>BrNameE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Search.designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +213,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\BrNameE.resx">
+      <DependentUpon>BrNameE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DAL\ArabologyDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ArabologyDB.Designer.cs</LastGenOutput>
