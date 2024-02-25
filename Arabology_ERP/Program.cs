@@ -18,7 +18,7 @@ namespace Arabology_ERP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_Main());
+            Application.Run(new TestNew.FRM_Model());
         }
     }
 }
