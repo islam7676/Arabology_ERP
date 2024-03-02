@@ -42,7 +42,7 @@ namespace TestNew
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void search1_Load(object sender, EventArgs e)

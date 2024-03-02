@@ -25,5 +25,10 @@ namespace TestNew
             lblBrId.Width = this.Width - txtBrId.Width;
             txtBrId.Enabled = false;
         }
+
+        private void lblBrId_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

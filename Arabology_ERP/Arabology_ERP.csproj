@@ -160,6 +160,12 @@
     <Compile Include="PL\F_Main.Designer.cs">
       <DependentUpon>F_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Inventory\FRM_Brands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Inventory\FRM_Brands.Designer.cs">
+      <DependentUpon>FRM_Brands.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Inventory\F_Items.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\F_Main.resx">
       <DependentUpon>F_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Inventory\FRM_Brands.resx">
+      <DependentUpon>FRM_Brands.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Inventory\F_Items.resx">
       <DependentUpon>F_Items.cs</DependentUpon>

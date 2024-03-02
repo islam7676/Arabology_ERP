@@ -32,7 +32,7 @@ namespace TestNew
             this.label1 = new System.Windows.Forms.Label();
             this.butRemove = new System.Windows.Forms.Button();
             this.butEx = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DatGV_Model = new System.Windows.Forms.DataGridView();
             this.butAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@ namespace TestNew
             this.brNameA1 = new TestNew.BrNameA();
             this.search2 = new TestNew.UsCo.Search();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatGV_Model)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,13 +80,13 @@ namespace TestNew
             this.butEx.UseVisualStyleBackColor = true;
             this.butEx.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dataGridView1
+            // DatGV_Model
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 454);
-            this.dataGridView1.TabIndex = 10;
+            this.DatGV_Model.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatGV_Model.Location = new System.Drawing.Point(12, 54);
+            this.DatGV_Model.Name = "DatGV_Model";
+            this.DatGV_Model.Size = new System.Drawing.Size(443, 454);
+            this.DatGV_Model.TabIndex = 10;
             // 
             // butAdd
             // 
@@ -175,7 +175,7 @@ namespace TestNew
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 19;
             // 
-            // Form1
+            // FRM_Model
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,7 +186,7 @@ namespace TestNew
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.butAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DatGV_Model);
             this.Controls.Add(this.butEx);
             this.Controls.Add(this.butRemove);
             this.Controls.Add(this.label1);
@@ -194,9 +194,9 @@ namespace TestNew
             this.Controls.Add(this.brInAc1);
             this.Controls.Add(this.brNameE1);
             this.Controls.Add(this.brNameA1);
-            this.Name = "Form1";
+            this.Name = "FRM_Model";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatGV_Model)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +210,7 @@ namespace TestNew
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butRemove;
         private System.Windows.Forms.Button butEx;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DatGV_Model;
         private System.Windows.Forms.Button butAdd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
