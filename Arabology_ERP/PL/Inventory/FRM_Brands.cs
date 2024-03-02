@@ -19,7 +19,7 @@ namespace Arabology_ERP.PL.Inventory
 
         private void brNameA1_Load(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

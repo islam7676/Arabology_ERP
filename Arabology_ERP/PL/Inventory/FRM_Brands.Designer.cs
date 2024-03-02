@@ -38,6 +38,12 @@ namespace Arabology_ERP.PL.Inventory
             this.BrandNameE = new TestNew.UsCo.BrNameE();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.InActive = new TestNew.UsCo.BrInAc();
+            this.butBrandNew = new System.Windows.Forms.Button();
+            this.butBrandEdit = new System.Windows.Forms.Button();
+            this.butBrandAdd = new System.Windows.Forms.Button();
+            this.butBrandEx = new System.Windows.Forms.Button();
+            this.butBrandRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,12 +124,85 @@ namespace Arabology_ERP.PL.Inventory
             this.dataGridView1.Size = new System.Drawing.Size(443, 454);
             this.dataGridView1.TabIndex = 6;
             // 
+            // InActive
+            // 
+            this.InActive.Location = new System.Drawing.Point(789, 336);
+            this.InActive.Name = "InActive";
+            this.InActive.Size = new System.Drawing.Size(105, 32);
+            this.InActive.TabIndex = 7;
+            // 
+            // butBrandNew
+            // 
+            this.butBrandNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butBrandNew.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.butBrandNew.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBrandNew.Location = new System.Drawing.Point(707, 374);
+            this.butBrandNew.Name = "butBrandNew";
+            this.butBrandNew.Size = new System.Drawing.Size(187, 39);
+            this.butBrandNew.TabIndex = 21;
+            this.butBrandNew.Text = "جـــــديد";
+            this.butBrandNew.UseVisualStyleBackColor = true;
+            // 
+            // butBrandEdit
+            // 
+            this.butBrandEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butBrandEdit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.butBrandEdit.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBrandEdit.Location = new System.Drawing.Point(707, 425);
+            this.butBrandEdit.Name = "butBrandEdit";
+            this.butBrandEdit.Size = new System.Drawing.Size(187, 39);
+            this.butBrandEdit.TabIndex = 20;
+            this.butBrandEdit.Text = "تعــديل";
+            this.butBrandEdit.UseVisualStyleBackColor = true;
+            // 
+            // butBrandAdd
+            // 
+            this.butBrandAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butBrandAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.butBrandAdd.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBrandAdd.Location = new System.Drawing.Point(523, 373);
+            this.butBrandAdd.Name = "butBrandAdd";
+            this.butBrandAdd.Size = new System.Drawing.Size(178, 39);
+            this.butBrandAdd.TabIndex = 19;
+            this.butBrandAdd.Text = "اضـــــافه";
+            this.butBrandAdd.UseVisualStyleBackColor = true;
+            // 
+            // butBrandEx
+            // 
+            this.butBrandEx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butBrandEx.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.butBrandEx.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBrandEx.Location = new System.Drawing.Point(523, 473);
+            this.butBrandEx.Name = "butBrandEx";
+            this.butBrandEx.Size = new System.Drawing.Size(371, 39);
+            this.butBrandEx.TabIndex = 18;
+            this.butBrandEx.Text = "خــروج";
+            this.butBrandEx.UseVisualStyleBackColor = true;
+            // 
+            // butBrandRemove
+            // 
+            this.butBrandRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butBrandRemove.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.butBrandRemove.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBrandRemove.Location = new System.Drawing.Point(523, 425);
+            this.butBrandRemove.Name = "butBrandRemove";
+            this.butBrandRemove.Size = new System.Drawing.Size(178, 39);
+            this.butBrandRemove.TabIndex = 17;
+            this.butBrandRemove.Text = "حـــذف";
+            this.butBrandRemove.UseVisualStyleBackColor = true;
+            // 
             // FRM_Brands
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(919, 520);
+            this.Controls.Add(this.butBrandNew);
+            this.Controls.Add(this.butBrandEdit);
+            this.Controls.Add(this.butBrandAdd);
+            this.Controls.Add(this.butBrandEx);
+            this.Controls.Add(this.butBrandRemove);
+            this.Controls.Add(this.InActive);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BrandNameE);
@@ -146,5 +225,11 @@ namespace Arabology_ERP.PL.Inventory
         private TestNew.UsCo.BrNameE BrandNameE;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private TestNew.UsCo.BrInAc InActive;
+        private System.Windows.Forms.Button butBrandNew;
+        private System.Windows.Forms.Button butBrandEdit;
+        private System.Windows.Forms.Button butBrandAdd;
+        private System.Windows.Forms.Button butBrandEx;
+        private System.Windows.Forms.Button butBrandRemove;
     }
 }
