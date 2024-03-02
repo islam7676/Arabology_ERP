@@ -54,5 +54,10 @@ namespace TestNew
         {
             textBox1.Text = search2.state;
         }
+
+        private void search2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

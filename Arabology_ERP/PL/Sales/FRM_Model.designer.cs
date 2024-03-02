@@ -36,7 +36,7 @@ namespace TestNew
             this.butAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.brID1 = new TestNew.BrID();
+            this.BranchId = new TestNew.BrID();
             this.brInAc1 = new TestNew.UsCo.BrInAc();
             this.brNameE1 = new TestNew.UsCo.BrNameE();
             this.brNameA1 = new TestNew.BrNameA();
@@ -124,13 +124,13 @@ namespace TestNew
             this.button2.Text = "جـــــديد";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // brID1
+            // BranchId
             // 
-            this.brID1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.brID1.Location = new System.Drawing.Point(695, 169);
-            this.brID1.Name = "brID1";
-            this.brID1.Size = new System.Drawing.Size(196, 41);
-            this.brID1.TabIndex = 5;
+            this.BranchId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.BranchId.Location = new System.Drawing.Point(695, 169);
+            this.BranchId.Name = "BranchId";
+            this.BranchId.Size = new System.Drawing.Size(196, 41);
+            this.BranchId.TabIndex = 5;
             // 
             // brInAc1
             // 
@@ -167,10 +167,11 @@ namespace TestNew
             this.search2.Size = new System.Drawing.Size(450, 91);
             this.search2.TabIndex = 18;
             this.search2.SearchTextChanged += new System.EventHandler(this.search2_SearchTextChanged);
+            this.search2.Load += new System.EventHandler(this.search2_Load);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(317, 276);
+            this.textBox1.Location = new System.Drawing.Point(464, 169);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 19;
@@ -190,7 +191,7 @@ namespace TestNew
             this.Controls.Add(this.butEx);
             this.Controls.Add(this.butRemove);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.brID1);
+            this.Controls.Add(this.BranchId);
             this.Controls.Add(this.brInAc1);
             this.Controls.Add(this.brNameE1);
             this.Controls.Add(this.brNameA1);
@@ -206,7 +207,7 @@ namespace TestNew
         private BrNameA brNameA1;
         private UsCo.BrNameE brNameE1;
         private UsCo.BrInAc brInAc1;
-        private BrID brID1;
+        private BrID BranchId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butRemove;
         private System.Windows.Forms.Button butEx;
